@@ -4,7 +4,8 @@
   margin-left: 500px;
   margin-top: 100px;
   border-radius: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(241, 240, 240);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .headbar {
   height: 50px;
@@ -22,10 +23,67 @@
   font-weight: bold;
 }
 .deranalogo {
-  margin-top: 0px;
+  position: absolute;
+  margin-top: -60px;
   margin-left: 150px;
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  border-width: 3px;
+  border-color: white;
   background-color: rgb(168, 166, 166);
+}
+.login_input_area {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.login_desc {
+  margin-top: 30px;
+  font-size: 12px;
+  text-align: center;
+  color: gray;
+}
+
+.inputFields[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-top: 20px;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-radius: 15px;
+}
+.inputFields[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-radius: 15px;
+}
+.inputFields:hover {
+  border-color: rgb(16, 109, 231);
+}
+.login_button {
+  width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  border-width: 2px;
+  background-color: rgb(1, 147, 214);
+}
+.login_button:hover {
+  background-color: rgb(1, 1, 184);
+}
+.txtsignup {
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+  margin-top: 20px;
+}
+.signup_now {
+  font-weight: bold;
+  color: rgb(236, 83, 83);
+}
+.signup_now :hover {
+  color: rgb(207, 3, 3);
 }
