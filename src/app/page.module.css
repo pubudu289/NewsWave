@@ -2,3 +2,13 @@
   color: rgb(165, 153, 42);
   font-family: "Courier New", Courier, monospace;
 }
+.footerbox {
+  background-color: rgb(185, 28, 28);
+  height: 50px;
+}
+.copytext {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+}

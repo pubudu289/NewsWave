@@ -1,5 +1,6 @@
 import React from "react";
 import styless from "./signin.module.css";
+import Link from "next/link";
 
 function page() {
   return (
@@ -32,7 +33,7 @@ function page() {
             <p className={styless.txtsignup}>
               Don't have an account?{" "}
               <span className={styless.signup_now}>
-                <a href="#">Sign Up Now</a>
+                <Link href="./signup">Sign Up Now</Link>
               </span>
             </p>
           </div>
