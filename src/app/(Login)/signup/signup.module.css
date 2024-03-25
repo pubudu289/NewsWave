@@ -31,8 +31,12 @@
   width: 100px;
   border-radius: 50%;
   border-width: 3px;
-  border-color: white;
-  background-color: rgb(168, 166, 166);
+  border-color: rgb(219, 219, 219);
+  background-color: rgb(255, 255, 255);
+}
+.dlogos {
+  margin-top: 20px;
+  z-index: 8;
 }
 .signup_input_area {
   margin-left: 20px;
@@ -114,4 +118,36 @@
 }
 .signup_now :hover {
   color: rgb(207, 3, 3);
+}
+@media only screen and (max-device-width: 480px) {
+  .container {
+    height: 750px;
+    width: 350px;
+    margin-left: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    border-radius: 10px;
+    background-color: rgb(241, 240, 240);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
+  }
+  .deranalogo {
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 130px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-color: rgb(219, 219, 219);
+    background-color: rgb(255, 255, 255);
+  }
+  .inputFields[type="checkbox"] {
+    box-sizing: border-box;
+    border-width: 2px;
+    text-align: center;
+    margin-left: 180px;
+  }
 }

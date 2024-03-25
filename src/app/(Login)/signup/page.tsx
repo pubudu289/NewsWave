@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "./signup.module.css";
 import Link from "next/link";
+import Image from "next/image";
+import dlogo from "../../../../public/images/derana1.png";
+
 function Page() {
   return (
     <div className={styles.container}>
-      <div className={styles.deranalogo}>{/* add a derana logo */}</div>
+      <div className={styles.deranalogo}>
+        <Image src={dlogo} alt="logo" className={styles.dlogos} />
+      </div>
       <div className={styles.headbar}></div>
       <div>
         <h1 className={styles.maintextArea}>
@@ -57,6 +62,7 @@ function Page() {
               </span>
             </p>
           </div>
+          <hr />
         </div>
       </div>
     </div>
