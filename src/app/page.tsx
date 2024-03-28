@@ -1,3 +1,4 @@
+import NewsGrid from "./Components/newsgrid";
 import Header from "./Components/header";
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
@@ -8,9 +9,14 @@ export default function Home() {
       <Header />
       <hr />
       <Navbar />
+
+      {/* All article section */}
       <section>
-        <div className="bg-green-600 h-10 ">banner image</div>
+        <div className="max-w-6xl mx-auto">
+          <NewsGrid />
+        </div>
       </section>
+
       <section id="#about">
         <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
           <img

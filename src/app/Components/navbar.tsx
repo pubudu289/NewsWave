@@ -134,7 +134,7 @@ const navbar = () => {
             </a>
             <a
               href="#newsletter"
-              className="text-white hover:bg-white hover:text-black rounded-lg p-2"
+              className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
             >
               News Letter
             </a>
