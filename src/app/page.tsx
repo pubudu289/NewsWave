@@ -1,4 +1,5 @@
 import NewsGrid from "./Components/newsgrid";
+import LatestNews from "./Components/latestnews";
 import Header from "./Components/header";
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
@@ -12,8 +13,20 @@ export default function Home() {
 
       {/* All article section */}
       <section>
-        <div className="max-w-6xl mx-auto">
-          <NewsGrid />
+        <div className="max-w-6xl mx-auto grid md:grid-cols-12 p-4 gap-3">
+          <div className="md:col-span-9">
+            <NewsGrid />
+          </div>
+          <div className=" rounded-[10px] sm:col-span-3">
+            <div className="border-2 rounded-[10px]">
+              <div className="bg-red-700 rounded-t-[10px]  p-2">
+                <p className="text-white font-bold text-center">Lates News</p>
+              </div>
+              <div className="m-3 snap-y h-[500px] overflow-scroll no-scrollbar">
+                <LatestNews />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
