@@ -42,7 +42,63 @@ function article_page() {
               </div>
               {/* artical desscription */}
               <div className="texr-[12px] mt-3 p-2">
-                <p>hvdvv vadsvd vdsvadvd </p>
+                <h1 className="text-center font-bold text-[20px]">
+                  Heading Area{" "}
+                </h1>
+                <p className="text-pretty text-[15px]">
+                  {" "}
+                  "On the other hand, we denounce with righteous indignation and
+                  dislike men who are so beguiled and demoralized by the charms
+                  of pleasure of the moment, so blinded by desire, that they
+                  cannot foresee the pain and trouble that are bound to ensue;
+                  and equal blame belongs to those who fail in their duty
+                  through weakness of will, which is the same as saying through
+                  shrinking from toil and pain. These cases are perfectly simple
+                  and easy to distinguish. In a free hour, when our power of
+                  choice is untrammelled and when nothing prevents our being
+                  able to do what we like best, every pleasure is to be welcomed
+                  and every pain avoided. But in certain circumstances and owing
+                  to the claims of duty or the obligations of business it will
+                  frequently occur that pleasures have to be repudiated and
+                  annoyances accepted. The wise man therefore always holds in
+                  these matters to this principle of selection: he rejects
+                  pleasures to secure other greater pleasures, or else he
+                  endures pains to avoid worse pains." "On the other hand, we
+                  denounce with righteous indignation and dislike men who are so
+                  beguiled and demoralized by the charms of pleasure of the
+                  moment, so blinded by desire, that they cannot foresee the
+                  pain and trouble that are bound to ensue; and equal blame
+                  belongs to those who fail in their duty through weakness of
+                  will, which is the same as saying through shrinking from toil
+                  and pain. These cases are perfectly simple and easy to
+                  distinguish. In a free hour, when our power of choice is
+                  untrammelled and when nothing prevents our being able to do
+                  what we like best, every pleasure is to be welcomed and every
+                  pain avoided. But in certain circumstances and owing to the
+                  claims of duty or the obligations of business it will
+                  frequently occur that pleasures have to be repudiated and
+                  annoyances accepted. The wise man therefore always holds in
+                  these matters to this principle of selection: he rejects
+                  pleasures to secure other greater pleasures, or else he
+                  endures pains to avoid worse pains." "On the other hand, we
+                  denounce with righteous indignation and dislike men who are so
+                  beguiled and demoralized by the charms of pleasure of the
+                  moment, so blinded by desire, that they cannot foresee the
+                  pain and trouble that are bound to ensue; and equal blame
+                  belongs to those who fail in their duty through weakness of
+                  will, which is the same as saying through shrinking from toil
+                  and pain. These cases are perfectly simple and easy to
+                  distinguish. In a free hour, when our power of choice is
+                  untrammelled and when nothing prevents our being able to do
+                  what we like best, every pleasure is to be welcomed and every
+                  pain avoided. But in certain circumstances and owing to the
+                  claims of duty or the obligations of business it will
+                  frequently occur that pleasures have to be repudiated and
+                  annoyances accepted. The wise man therefore always holds in
+                  these matters to this principle of selection: he rejects
+                  pleasures to secure other greater pleasures, or else he
+                  endures pains to avoid worse pains."
+                </p>
               </div>
             </div>
             <div className=" rounded-[10px] sm:col-span-3">
