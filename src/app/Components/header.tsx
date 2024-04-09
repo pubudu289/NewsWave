@@ -20,7 +20,7 @@ function header() {
                     width={50}
                     className="bg-white"
                   />{" "}
-                  <p className={styles.logotxt}>Derana News Wave</p>
+                  <p className={styles.logotxt}>News Wave</p>
                 </a>
               </div>
             </div>

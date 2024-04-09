@@ -75,76 +75,72 @@ const Sidebar = () => {
     setToggleCollapse(!toggleCollapse);
   };
   return (
-    <>
-      <div
-        className={wrapperClasses}
-        onMouseEnter={onMouseOver}
-        onMouseLeave={onMouseOver}
-        style={{ transition: "width 300ms cubic-bezier(0.2,0,0,1)0s" }}
-      >
-        <div className="flex flex-col">
-          <div className="flex items-center justify-between relative">
-            <div className="flex items-center pl-1 gap-4">
-              <LogoIcon />
-              <span
-                className={classNames(
-                  "mt-2 text-lg font-medium text-teal-950",
-                  {
-                    hidden: toggleCollapse,
-                  }
-                )}
-              >
-                <p className="text-blue-600 text-[15px]">News Wave</p>
-              </span>
-            </div>
-            {isCollapsible && (
-              <button
-                className={collaseIconClasses}
-                onClick={handleSidebarToggle}
-              >
-                <CollapsIcon />
-              </button>
-            )}
-          </div>
-          <div className="flex flex-col items-start mt-24">
-            {menuItems.map(({ icon: Icon, ...menu }) => {
-              const classes = getNavItemClasses(menu);
-              return (
-                <div className={classes}>
-                  <Link
-                    href={menu.link}
-                    className="flex py-4 px-3 items-center w-full h-full"
-                  >
-                    <div style={{ width: "2.5rem" }}>
-                      <Icon />
-                    </div>
-                    {!toggleCollapse && (
-                      <span
-                        className={classNames(
-                          "text-md font-medium text-gray-500"
-                        )}
-                      >
-                        {menu.label}
-                      </span>
-                    )}
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className={`${getNavItemClasses({})} px-3 py-4`}>
-          <div style={{ width: "2.5rem" }}>
-            <LogoutIcon />
-          </div>
-          {!toggleCollapse && (
-            <span className={classNames("text-md font-medium text-gray-500")}>
-              Logout
+    <div
+      className={wrapperClasses}
+      onMouseEnter={onMouseOver}
+      onMouseLeave={onMouseOver}
+      style={{ transition: "width 300ms cubic-bezier(0.2,0,0,1)0s" }}
+    >
+      <div className="flex flex-col">
+        <div className="flex items-center justify-between relative">
+          <div className="flex items-center pl-1 gap-4">
+            <LogoIcon />
+            <span
+              className={classNames("mt-2 text-lg font-medium text-teal-950", {
+                hidden: toggleCollapse,
+              })}
+            >
+              <p className="text-blue-600 text-[15px]">News Wave</p>
             </span>
+          </div>
+          {isCollapsible && (
+            <button
+              className={collaseIconClasses}
+              onClick={handleSidebarToggle}
+            >
+              <CollapsIcon />
+            </button>
           )}
         </div>
+        <div className="flex flex-col items-start mt-24">
+          {menuItems.map(({ icon: Icon, ...menu }) => {
+            const classes = getNavItemClasses(menu);
+
+            return (
+              <div className={classes}>
+                <Link
+                  href={menu.link}
+                  className="flex py-4 px-3 items-center w-full h-full"
+                >
+                  <div style={{ width: "2.5rem" }}>
+                    <Icon />
+                  </div>
+                  {!toggleCollapse && (
+                    <span
+                      className={classNames(
+                        "text-md font-medium text-gray-500"
+                      )}
+                    >
+                      {menu.label}
+                    </span>
+                  )}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </>
+      <div className={`${getNavItemClasses({})} px-3 py-4`}>
+        <div style={{ width: "2.5rem" }}>
+          <LogoutIcon />
+        </div>
+        {!toggleCollapse && (
+          <span className={classNames("text-md font-medium text-gray-500")}>
+            Logout
+          </span>
+        )}
+      </div>
+    </div>
   );
 };
 export default Sidebar;
