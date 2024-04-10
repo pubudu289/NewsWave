@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../Components/Layout";
 
-const page = () => {
+function page() {
   return (
     <Layout>
       <div className="bg-gray-600 rounded-md">
@@ -9,16 +9,16 @@ const page = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <p className="text-white font-bold">All Articals</p>
+                <p className="text-white font-bold">Manage All Users</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Table Area */}
+      {/* User Area */}
     </Layout>
   );
-};
+}
 
 export default page;

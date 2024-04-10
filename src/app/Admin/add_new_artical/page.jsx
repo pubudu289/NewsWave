@@ -44,7 +44,7 @@ const page = () => {
         </div>
       </div>
       {/* form area */}
-      <div className="m-4 bg-white border-[1px] border-gray-400 shadow-md rounded-md mt-3 p-3 py-3">
+      <div className="m-10 bg-white border-[1px] border-gray-400 shadow-md rounded-md mt-3 p-3 py-3">
         <div>
           <h1 className="text-3xl font-bold">Add New Article</h1>
           <p>Please fill in the form bellow</p>

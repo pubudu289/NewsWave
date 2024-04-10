@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useMemo, useState } from "react";
 import classNames from "classnames";
 
@@ -28,7 +28,7 @@ const menuItems = [
     icon: ArticleIcon,
     link: "/Admin/all_articals",
   },
-  { id: 4, label: "Manage Users", icon: UsersIcon, link: "/" },
+  { id: 4, label: "Manage Users", icon: UsersIcon, link: "/Admin/manage_user" },
   { id: 5, label: "Manage Tutorials", icon: VideosIcon, link: "/" },
 ];
 
@@ -36,11 +36,11 @@ const Sidebar = () => {
   const [toggleCollapse, setToggleCollapse] = useState(false);
   const [isCollapsible, setIsCollapsible] = useState(false);
 
-  const router = useRouter();
+  const router = usePathname();
 
   const activeMenu = useMemo(
-    () => menuItems.find((menu) => menu.link === router.pathname),
-    [router.pathname]
+    () => menuItems.find((menu) => menu.link === router),
+    [router]
   );
 
   const wrapperClasses = classNames(
@@ -62,7 +62,7 @@ const Sidebar = () => {
     return classNames(
       "flex items-center cursor-pointer hover:bg-red-100 rounded w-full overflow-hidden whitespace-nowrap",
       {
-        // ["bg-red-700"]: activeMenu.id === menu.id,
+        ["bg-blue-400"]: activeMenu.id === menu.id,
       }
     );
   };
@@ -107,7 +107,7 @@ const Sidebar = () => {
             const classes = getNavItemClasses(menu);
 
             return (
-              <div className={classes}>
+              <div key={menu.id} className={classes}>
                 <Link
                   href={menu.link}
                   className="flex py-4 px-3 items-center w-full h-full"
