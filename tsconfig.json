@@ -21,6 +21,14 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/lib/mongo/mongoDB.js",
+    "src/app/api/addnewarticle/route.js",
+    "src/app/modals/add_news_article.js"
+  ],
   "exclude": ["node_modules"]
 }

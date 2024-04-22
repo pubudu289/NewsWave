@@ -85,7 +85,7 @@ const page = () => {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 p-3 text-white font-bold rounded-md"
+            className="bg-blue-500 p-3 text-white font-bold rounded-md w-fit"
           >
             {" "}
             Submit
