@@ -14,3 +14,10 @@ export async function GET() {
   const articles = await Article.find();
   return NextResponse.json({ articles });
 }
+
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
+  await connectMongoDB();
+  await Article.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Article Deleted..!" }, { status: 200 });
+}

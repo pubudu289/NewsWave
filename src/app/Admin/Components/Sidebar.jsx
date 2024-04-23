@@ -13,6 +13,8 @@ import {
   UsersIcon,
   VideosIcon,
 } from "../../Admin/Components/icons";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
+import { disconnect } from "process";
 
 const menuItems = [
   { id: 1, label: "Dashboard", icon: HomeIcon, link: "/Admin/dashboard" },
@@ -28,8 +30,20 @@ const menuItems = [
     icon: ArticleIcon,
     link: "/Admin/all_articals",
   },
-  { id: 4, label: "Manage Users", icon: UsersIcon, link: "/Admin/manage_user" },
-  { id: 5, label: "Manage Tutorials", icon: VideosIcon, link: "/" },
+  {
+    id: 4,
+    label: "Update Article",
+    icon: ArticleIcon,
+    link: "/Admin/update_article",
+  },
+
+  { id: 5, label: "Manage Users", icon: UsersIcon, link: "/Admin/manage_user" },
+  {
+    id: 6,
+    label: "Manage Tutorials",
+    icon: VideosIcon,
+    link: "/",
+  },
 ];
 
 const Sidebar = () => {
