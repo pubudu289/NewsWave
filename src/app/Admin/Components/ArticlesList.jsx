@@ -45,8 +45,8 @@ export default async function ArticalList() {
             <p>{a.description}</p>
           </div>
           <div className="ml-auto flex gap-2">
-            <RemoveBtn />
-            <Link href={`/Admin/update_article/?id=${a._id}`}>
+            <RemoveBtn id={a._id} />
+            <Link href={`/Admin/update_article/${a._id}`}>
               <HiPencilAlt size={24} />
             </Link>
           </div>

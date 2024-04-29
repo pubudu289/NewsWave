@@ -4,56 +4,37 @@ import Layout from "../Components/Layout";
 import { useRouter } from "next/navigation";
 
 const page = () => {
-  const [headlinetxt, setHeadlinetxt] = useState("");
-  const [smalldestxt, setSmalldestxt] = useState("");
-  const [articletxt, setArticletxt] = useState("");
+  const [headline, setHeadline] = useState("");
+  const [small_description, setSmall_description] = useState("");
+  const [description, setDescription] = useState("");
   const [error, setError] = useState([]);
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!headlinetxt || !smalldestxt || !articletxt) {
+    if (!headline || !small_description || !description) {
       alert("All inputs are required!");
       return;
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/addnewarticle", {
+      const res = await fetch("/api/addnewarticle", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ headlinetxt, smalldestxt, articletxt }),
+        body: JSON.stringify({ headline, small_description, description }),
       });
       if (res.ok) {
         router.push("/Admin/all_articals");
+        router.refresh();
       } else {
         throw new Error("Failed to create a topic");
       }
     } catch (error) {
       console.log(error);
     }
-
-    // console.log("Headline :", headlinetxt);
-    // console.log("Small Description :", smalldestxt);
-    // console.log("Artical :", articletxt);
-
-    // const res = await fetch("/api/addnewarticle", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     headlinetxt,
-    //     smalldestxt,
-    //     articletxt,
-    //   }),
-    // });
-
-    // const { msg } = await res.json();
-    // setError(msg);
-    // console.log(error);
   };
 
   return (
@@ -82,30 +63,30 @@ const page = () => {
           <div>
             <label htmlFor="Headline">Article Headline</label>
             <input
-              onChange={(e) => setHeadlinetxt(e.target.value)}
-              value={headlinetxt}
+              onChange={(e) => setHeadline(e.target.value)}
+              value={headline}
               type="text"
-              id="headlinetxt"
+              id="headline"
               placeholder="Headline"
             />
           </div>
           <div>
             <label htmlFor="smalldesc">Small Description</label>
             <textarea
-              onChange={(e) => setSmalldestxt(e.target.value)}
-              value={smalldestxt}
+              onChange={(e) => setSmall_description(e.target.value)}
+              value={small_description}
               className="h-14"
-              id="smalldestxt"
+              id="small_description"
               placeholder="Small Description"
             ></textarea>
           </div>
           <div>
             <label htmlFor="article">Article</label>
             <textarea
-              onChange={(e) => setArticletxt(e.target.value)}
-              value={articletxt}
+              onChange={(e) => setDescription(e.target.value)}
+              value={description}
               className="h-52"
-              id="articletxt"
+              id="description"
               placeholder="Type your Article Here..."
             ></textarea>
           </div>

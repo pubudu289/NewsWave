@@ -13,8 +13,6 @@ import {
   UsersIcon,
   VideosIcon,
 } from "../../Admin/Components/icons";
-import { MdVisibility, MdVisibilityOff } from "react-icons/md";
-import { disconnect } from "process";
 
 const menuItems = [
   { id: 1, label: "Dashboard", icon: HomeIcon, link: "/Admin/dashboard" },
