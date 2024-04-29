@@ -25,7 +25,10 @@ export default async function ArticalList() {
   return (
     <>
       {articles.map((a) => (
-        <div className="sm:border border-slate-300 p-2 sm:rounded-lg sm:flex sm:justify-start sm:gap-4 sm:items-start mt-1 scroll">
+        <div
+          key={a._id}
+          className="sm:border border-slate-300 p-2 sm:rounded-lg sm:flex sm:justify-start sm:gap-4 sm:items-start mt-1 scroll"
+        >
           <div>
             <Image
               src={newsimg}
@@ -43,7 +46,7 @@ export default async function ArticalList() {
           </div>
           <div className="ml-auto flex gap-2">
             <RemoveBtn />
-            <Link href={`/Admin/update_article/${a._id}`}>
+            <Link href={`/Admin/update_article/?id=${a._id}`}>
               <HiPencilAlt size={24} />
             </Link>
           </div>

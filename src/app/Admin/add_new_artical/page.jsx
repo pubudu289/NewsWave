@@ -1,33 +1,59 @@
 "use client";
 import React, { useState } from "react";
 import Layout from "../Components/Layout";
+import { useRouter } from "next/navigation";
+
 const page = () => {
   const [headlinetxt, setHeadlinetxt] = useState("");
   const [smalldestxt, setSmalldestxt] = useState("");
   const [articletxt, setArticletxt] = useState("");
   const [error, setError] = useState([]);
 
+  const router = useRouter();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Headline :", headlinetxt);
-    console.log("Small Description :", smalldestxt);
-    console.log("Artical :", articletxt);
+    if (!headlinetxt || !smalldestxt || !articletxt) {
+      alert("All inputs are required!");
+      return;
+    }
 
-    const res = await fetch("/api/addnewarticle", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        headlinetxt,
-        smalldestxt,
-        articletxt,
-      }),
-    });
+    try {
+      const res = await fetch("http://localhost:3000/api/addnewarticle", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ headlinetxt, smalldestxt, articletxt }),
+      });
+      if (res.ok) {
+        router.push("/Admin/all_articals");
+      } else {
+        throw new Error("Failed to create a topic");
+      }
+    } catch (error) {
+      console.log(error);
+    }
 
-    const { msg } = await res.json();
-    setError(msg);
-    console.log(error);
+    // console.log("Headline :", headlinetxt);
+    // console.log("Small Description :", smalldestxt);
+    // console.log("Artical :", articletxt);
+
+    // const res = await fetch("/api/addnewarticle", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     headlinetxt,
+    //     smalldestxt,
+    //     articletxt,
+    //   }),
+    // });
+
+    // const { msg } = await res.json();
+    // setError(msg);
+    // console.log(error);
   };
 
   return (
