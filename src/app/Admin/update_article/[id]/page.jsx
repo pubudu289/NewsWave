@@ -3,11 +3,25 @@ import React, { useState } from "react";
 import Layout from "../../Components/Layout";
 import UpdateArticle from "@/app/Admin/Components/UpdateArticle";
 
-const page = () => {
-  // const [headlinetxt, setHeadlinetxt] = useState("");
-  // const [smalldestxt, setSmalldestxt] = useState("");
-  // const [articletxt, setArticletxt] = useState("");
-  // const [error, setError] = useState([]);
+const getArticleById = async (id) => {
+  try {
+    const res = await fetch(`http://localhost:3000/api/addnewarticle/${id}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new error("Failed to fetch Article..");
+    }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export default async function page({ params }) {
+  const { id } = params;
+  const { article } = await getArticleById(id);
+  const { headline, small_description, description } = article;
 
   return (
     <Layout>
@@ -23,10 +37,12 @@ const page = () => {
         </div>
       </div>
       {/* form area */}
-      <div>abs</div>
-      <UpdateArticle />
+      <UpdateArticle
+        id={id}
+        headline={headline}
+        small_description={small_description}
+        description={description}
+      />
     </Layout>
   );
-};
-
-export default page;
+}

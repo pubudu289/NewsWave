@@ -28,16 +28,10 @@ const menuItems = [
     icon: ArticleIcon,
     link: "/Admin/all_articals",
   },
-  {
-    id: 4,
-    label: "Update Article",
-    icon: ArticleIcon,
-    link: "/Admin/update_article",
-  },
 
-  { id: 5, label: "Manage Users", icon: UsersIcon, link: "/Admin/manage_user" },
+  { id: 4, label: "Manage Users", icon: UsersIcon, link: "/Admin/manage_user" },
   {
-    id: 6,
+    id: 5,
     label: "Manage Tutorials",
     icon: VideosIcon,
     link: "/",
@@ -74,7 +68,7 @@ const Sidebar = () => {
     return classNames(
       "flex items-center cursor-pointer hover:bg-red-100 rounded w-full overflow-hidden whitespace-nowrap",
       {
-        ["bg-blue-400"]: activeMenu.id === menu.id,
+        ["bg-blue-400"]: activeMenu && activeMenu.id === menu.id,
       }
     );
   };

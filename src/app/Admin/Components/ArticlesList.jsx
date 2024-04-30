@@ -11,7 +11,7 @@ const getArticles = async () => {
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch topics");
+      throw new Error("Failed to fetch Articles");
     }
     return res.json();
   } catch (error) {
